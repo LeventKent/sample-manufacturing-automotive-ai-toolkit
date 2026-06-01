@@ -91,4 +91,13 @@ The project integrates with MA3T's deployment pipeline:
 
 ### Interactive (via Notebooks)
 
-For development and experimentation, follow the instructions in the respective README files of each agent.
+Set up a virtual environment before running the notebooks:
+
+```bash
+cd catalog/automotive-vcycle
+python -m venv .venv
+source .venv/bin/activate
+pip install ipykernel
+```
+
+Each notebook installs its own agent dependencies in the first cells.
