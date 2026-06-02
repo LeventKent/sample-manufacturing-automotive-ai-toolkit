@@ -36,9 +36,9 @@ Multi-agent system for business and technical requirements analysis with user ac
 - Generates comprehensive user acceptance test specifications
 - Supports IEEE 830 standards and automotive requirements workflows
 
-**Location:** `bedrock-agents/requirements-agent/`  
+**Location:** `agents/requirements-agent/`  
 **MCP Server:** `mcp-servers/automotive-requirements-mcp/`  
-**Documentation:** See [Requirements Analyzer README](bedrock-agents/requirements-agent/README.md) for detailed elaboration and interactive deployments.
+**Documentation:** See [Requirements Analyzer README](agents/requirements-agent/README.md) for detailed elaboration and interactive deployments.
 
 ### 2. Software Design Agent
 Multi-agent system that transforms validated requirements into comprehensive technical design documents for automotive software development.
@@ -50,9 +50,9 @@ Multi-agent system that transforms validated requirements into comprehensive tec
 - Ensures alignment with automotive safety standards (ISO 26262, UNECE WP.29)
 - Includes architecture diagrams, component specifications, interface definitions, and data models
 
-**Location:** `bedrock-agents/design-agent/`  
+**Location:** `agents/design-agent/`  
 **MCP Server:** `mcp-servers/automotive-design-mcp/`  
-**Documentation:** See [Software Design Agent README](bedrock-agents/design-agent/README.md) for detailed elaboration and interactive deployments.
+**Documentation:** See [Software Design Agent README](agents/design-agent/README.md) for detailed elaboration and interactive deployments.
 
 ### 3. C Code Analyzer Agent
 Multi-agent system for automotive C code analysis with custom automotive coding standards compliance checking and unit test generation.
@@ -63,9 +63,9 @@ Multi-agent system for automotive C code analysis with custom automotive coding 
 - Conditionally generates comprehensive unit tests for compliant code
 - Includes edge cases, boundary conditions, and automotive testing standards
 
-**Location:** `bedrock-agents/c-code-analyzer-agent/`  
+**Location:** `agents/c-code-analyzer-agent/`  
 **MCP Server:** `mcp-servers/automotive-coding-mcp/`  
-**Documentation:** See [C Code Analyzer README](bedrock-agents/c-code-analyzer-agent/README.md) for detailed elaboration and interactive deployments.
+**Documentation:** See [C Code Analyzer README](agents/c-code-analyzer-agent/README.md) for detailed elaboration and interactive deployments.
 
 ## IDE Integration Support
 The project support Kiro and Cline based integrations. Kiro with Android setup is already set as the default and the files are available directly under ./kiro. Additional configuration files are available under 
@@ -81,7 +81,7 @@ The project integrates with MA3T's deployment pipeline:
 1. **CDK stack** is discovered by `nested_stack_registry.py` via the top-level `manifest.json`
 2. **Per-agent manifests** are discovered by `build_launch_agentcore.py` via `os.walk`
 3. Run `cd ma3t && ./deploy_cdk.sh` to deploy infrastructure and agents
-4. After the deployment, retrieve the .bedrock_agentcore.yaml files from the S3 bucket and save them under `catalog/automotive-vcycle/bedrock-agents/design-agent/.bedrock_agentcore.yaml`, `catalog/automotive-vcycle/bedrock-agents/requirements-agent/.bedrock_agentcore.yaml` or `catalog/automotive-vcycle/bedrock-agents/c-code-analyzer-agent/.bedrock_agentcore.yaml` respectively.
+4. After the deployment, retrieve the .bedrock_agentcore.yaml files from the S3 bucket and save them under `catalog/automotive-vcycle/agents/design-agent/.bedrock_agentcore.yaml`, `catalog/automotive-vcycle/agents/requirements-agent/.bedrock_agentcore.yaml` or `catalog/automotive-vcycle/agents/c-code-analyzer-agent/.bedrock_agentcore.yaml` respectively.
 5. Adjust the Settings/Steering Files for Local IDE
 - For Kiro, extend the default setup in the workspace (`./kiro` folder) by adding the c-code analyzer configuration. Add additional steering file under '/ide-support/kiro'
 - For Cline, use `./ide-support/cline`.
@@ -94,7 +94,7 @@ The project integrates with MA3T's deployment pipeline:
 Set up a virtual environment before running the notebooks:
 
 ```bash
-cd catalog/automotive-vcycle/bedrock-agents
+cd catalog/automotive-vcycle/agents
 python -m venv .venv
 source .venv/bin/activate
 pip install ipykernel

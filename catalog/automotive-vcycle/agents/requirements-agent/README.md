@@ -24,33 +24,34 @@ The automotive requirements analyzer and user acceptance test generator is imple
 
 ## Files
 
-- `automotive_requirements_agent_notebook.ipynb` - Main Jupyter notebook demonstrating the multi-agent system
+- `requirements-analyzer.ipynb` - Main Jupyter notebook demonstrating the multi-agent system
 - `requirements_analyzer.py` - Full Strands-based requirements analyzer implementation
-- `utils.py` - Utility functions for Cognito authentication and user pool management
 - `requirements.txt` - Python dependencies for the agent to be deployed to AgentCore Runtime.
 
 
 ### Path Configuration
 
-The notebook and analyzer are configured to work from the backend directory with the following path structure:
+The notebook and analyzer are configured to work from the agent directory with the following path structure:
 
 ```
-automotive-strands-agents-in-runtime/
-├── backend/                                    # Backend Services
-│   └── requirements-agent/                    # Requirements Analyzer Backend (current directory)
-│       ├── automotive_requirements_agent_notebook.ipynb
+catalog/automotive-vcycle/
+├── agents/
+│   ├── utils.py                                # Shared utility functions for Cognito auth
+│   ├── requirements.txt                        # Shared Python dependencies
+│   └── requirements-agent/                     # Requirements Analyzer (current directory)
+│       ├── requirements-analyzer.ipynb
 │       ├── requirements_analyzer.py
-│       ├── utils.py
 │       └── requirements.txt
-├── weather-app/business-requirements/          # Business requirements documents
-│   └── weather_app_brd.md
-└── weather-app/technical-requirements/         # Technical requirements documents
-    └── weather_app_srs.md
+└── sample-data/weather-app/
+    ├── business-requirements/
+    │   └── weather_app_brd.md
+    └── technical-requirements/
+        └── weather_app_srs.md
 ```
 
 ### Key Features
 
-1. **Business Requirements Focus**: Analyzes documents from `../weather-app/business-requirements/`
+1. **Business Requirements Focus**: Analyzes documents from `../../sample-data/weather-app/business-requirements/`
 2. **Multi-Agent Architecture**: Uses Strands agents with conditional execution
 3. **AgentCore Runtime**: Deploys to Amazon Bedrock AgentCore Runtime
 4. **Authentication**: Integrated with Amazon Cognito for secure access
@@ -59,13 +60,13 @@ automotive-strands-agents-in-runtime/
 ## Getting Started
 
 ### Prerequisites
-- Python 3.13+ (Recommended: virtual environment at workspace level created and top level requirements installed)
+- Python 3.12+ (see [parent README](../../README.md) for virtual environment setup)
 - AWS CLI configured for a US based region
 - Amazon Bedrock access
 - AgentCore Runtime permissions
 
 ### 1. Deploy Infrastructure Interactively (via Notebooks)
-This section describes the deployment via notebooks. If you want to deploy via ma3t toolkit, refer to  [parent README](../README.md)
+This section describes the deployment via notebooks. If you want to deploy via ma3t toolkit, refer to  [parent README](../../README.md)
 
 Run notebook cells. This will deploy the agent to the agentcore runtime.
 

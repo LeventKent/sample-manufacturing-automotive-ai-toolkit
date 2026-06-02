@@ -50,13 +50,13 @@ The automotive technical design generator is implemented using Strands Agents fr
 ## Getting Started
 
 ### Prerequisites
-- Python 3.13+ (Recommended: virtual environment at workspace level created and top level requirements installed)
+- Python 3.12+ (see [parent README](../../README.md) for virtual environment setup)
 - AWS CLI configured for a US based region
 - Amazon Bedrock access
 - AgentCore Runtime permissions
 
 ### 1. Deploy Infrastructure Interactively (via Notebooks)
-This section describes the deployment via notebooks. If you want to deploy via ma3t toolkit, refer to  [parent README](../README.md)
+This section describes the deployment via notebooks. If you want to deploy via ma3t toolkit, refer to  [parent README](../../README.md)
 
 Run notebook cells. This will deploy the agent to the agentcore runtime and an MCP server retrieving guidelines to AgentCore Gateway.
 
