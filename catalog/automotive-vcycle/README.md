@@ -95,9 +95,12 @@ Set up a virtual environment before running the notebooks:
 
 ```bash
 cd catalog/automotive-vcycle/agents
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 pip install ipykernel
+python3 -m ipykernel install --user --name automotive-vcycle --display-name "automotive-vcyle"
 ```
 
-Each notebook installs its own agent dependencies in the first cells.
+Notes:  
+- After running the above, you will need to reload your IDE for the Jupyter extension to pick up the registered kernel
+- Each notebook installs its own agent dependencies in the first cells.
